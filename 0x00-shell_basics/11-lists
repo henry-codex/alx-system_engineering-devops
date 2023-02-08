@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -alh --almost-all --ignore= 'lost+found' . ../ /boot
+ls -al ./ ../ /boot
