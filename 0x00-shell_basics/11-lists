@@ -1,3 +1,2 @@
-  #!/bin/bash
-
-  ls -l -a -R ./ ../ /boot
+#!/bin/bash
+ls -l -a -R ./ ../ /boot
