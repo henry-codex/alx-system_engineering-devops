@@ -1,0 +1,2 @@
+#!/bin/bash
+echo >school.mgc 0 string SCHOOL
