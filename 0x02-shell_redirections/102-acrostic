@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(head -n $(echo $(echo $1 | wc -c)) /usr/share/dict/words | tr -d "\n")
+cut -c 1 | paste -s -d"
