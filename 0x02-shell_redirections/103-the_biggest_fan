@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n +2 | cut -fi | sort \ uniq -c |sort -nr | head -11 | tr -s   | cut -d  | cut -d  -f3  
+cut -f 1 /path/to/logs.tsv | sort | uniq -c | sort -rn | head -n 11
