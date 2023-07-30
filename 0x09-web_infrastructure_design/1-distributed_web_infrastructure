@@ -1,1 +1,27 @@
 https://imgur.com/a/qJYF48C
+
+The pictorial reference to this writing is located in the link above: [Insert Link Here].
+
+Additional Elements
+
+One Web Server:
+An extra web server has been incorporated into the previous infrastructure, introducing redundancy with the addition of this server.
+One Load Balancer (HAProxy):
+A Load Balancer (HAProxy) has been implemented to evenly distribute the traffic between the two web servers.
+Load Balancer Configuration
+The load balancer is configured with an active-active setup, providing increased computing capacity due to the presence of multiple servers and ensuring redundancy.
+
+Data Synchronization
+
+The infrastructure employs a MySQL Master-Replica cluster with replication to maintain data synchronization. The master-slave replication system prevents any downtime as the replica serves as a constant live backup of the database, allowing it to be promoted to the master role if the original master server fails.
+The Master-Slave replication operates as a one-way process, with data flowing from the master to the replica. Consequently, only the Master database node can accept both reads and writes, while the Replica can only accept read operations.
+Problems With This Infrastructure
+
+While the addition of a load balancer enhances redundancy, it becomes a single point of failure itself. If the load balancer fails, the entire infrastructure could crash.
+There is no firewall protection implemented on the servers, leaving them potentially vulnerable to security threats.
+The traffic remains unencrypted as there is no TLS (or SSL) encryption for the HTTP requests and responses, exposing data to potential interception and manipulation.
+The absence of monitoring tools and systems makes it difficult to track the infrastructure's performance, health, and potential issues.
+
+
+
+

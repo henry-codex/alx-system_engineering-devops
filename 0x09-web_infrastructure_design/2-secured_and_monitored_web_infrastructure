@@ -1,1 +1,24 @@
-https://imgur.com/gallery/JB5ULK5 
+https://imgur.com/gallery/JB5ULK5
+
+Additional Elements
+
+3 Firewalls: These firewalls are responsible for filtering network traffic both into and out of the machine, enhancing security and protecting the infrastructure from potential threats.
+1 SSL certificate to serve www.foobar.com over HTTPS: This SSL certificate ensures that the traffic to and from www.foobar.com is encrypted, safeguarding it from interception and unauthorized access.
+3 Monitoring clients (data collector for Sumologic or other monitoring services): The monitoring clients play a crucial role in tracking various metrics and ensuring the smooth operation of the system.
+Monitoring Setup
+
+The monitoring setup consists of a client that collects data and transmits it to the monitoring system.
+The monitoring system is configured to:
+i. Collect web server data, providing insights into the web servers' performance and health.
+ii. Trigger an alert if the Query Per Second (QPS) metric exceeds acceptable levels, allowing prompt response to potential issues.
+Problems
+
+Terminating SSL at the load balancer level leaves traffic between the load balancer and web servers unencrypted and vulnerable to potential attacks. It is essential to consider implementing end-to-end encryption for better security.
+The dependency on a single MySQL server (The Master) capable of accepting writes poses a significant risk. If this server goes down, the application will lose the ability to write to the database, potentially leading to service disruptions.
+Utilizing servers with identical components (database, web server, and application server) can lead to maintenance problems. Performing maintenance on a server for a specific component may inadvertently affect other components sharing the same server.
+Server uniformity may also be problematic as the consumption and resource demands may not grow uniformly across all components, potentially leading to imbalanced performance and resource allocation.
+The load balancer, despite adding redundancy, remains a single point of failure. If the load balancer fails, the entire infrastructure could suffer downtime or become inaccessible to users. Implementing a redundant load balancer configuration could mitigate this issue.
+
+
+
+ 

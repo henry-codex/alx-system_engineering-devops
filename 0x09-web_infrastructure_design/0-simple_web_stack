@@ -1,1 +1,31 @@
-https://imgur.com/gallery/URv3FMV 
+https://imgur.com/gallery/URv3FMV
+
+The reference image for this writing can be found in the link above.
+
+The Server
+
+Positioned within a datacenter, a specialized structure housing numerous machines, the server depicted in the diagram can be either physical or virtual, represented as an instance of a physical server.
+Equipped with a unique operating system, this server efficiently provides services to end users.
+One Web Server
+
+Installed on the server is an NGINX web server responsible for serving "static" web content (unchanging content delivered to users) using the HTTP protocol.
+One Application Server
+
+The primary function of the application server is to process web server requests and generate dynamic content based on the backend's business logic and application database.
+One Database
+
+The database's main role is to store application data.
+Domain Name / Domain Name System (DNS)
+
+The DNS plays a crucial role in translating the domain name record to its corresponding IP address.
+The hosted website, www.foobar.com, is represented as an A record, resolving to the IPV4 address 8.8.8.8.
+Issues with This Infrastructure
+
+The server being a Single Point of Failure (SPOF)
+This infrastructure lacks a redundant server as a backup, leaving it susceptible to failure if the single server malfunctions. As a result, the application may crash.
+Downtime During Maintenance
+Performing maintenance activities, such as deploying new code, requires rebooting the server, causing a downtime period during which the server is unavailable for client functionalities.
+Lack of Scalability
+Due to its reliance on a single server, web server, and application server, this infrastructure is incapable of scaling efficiently to handle multiple requests. The absence of a load balancer further contributes to this limitation.
+Protocol
+The server utilizes the TCP/IP protocol to establish communication with the user's computer requesting access to the website. 
